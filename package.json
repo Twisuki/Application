@@ -2,7 +2,7 @@
   "name": "hnu-robotics-application",
   "description": "湖南大学机器人学院学生手册",
   "version": "2.0.0",
-  "license": "Apache 2.0",
+  "license": "MIT, Apache 2.0, CC BY-NC-SA 4.0",
   "type": "module",
   "scripts": {
     "build": "vuepress-vite build src",

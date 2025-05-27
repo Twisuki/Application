@@ -11,7 +11,7 @@ export default hopeTheme(
 
   favicon: "/favicon.jpg",
 
-  repo: "Twisuki/HNU-Robotics-Application",
+  repo: "TZLakeStudio/Application",
 
   docsDir: "src",
 
