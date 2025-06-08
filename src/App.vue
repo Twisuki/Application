@@ -18,6 +18,7 @@ export default {
     <NavBar class="nav-bar"/>
 
     <div class="main-content">
+      <SideBar v-if="showSidebar"/>
       <router-view class="page-content"/>
     </div>
 

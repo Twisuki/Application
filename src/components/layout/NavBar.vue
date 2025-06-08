@@ -1,13 +1,15 @@
-<template>
-  <el-row>
-    <el-col :span="2">
-      <div class="grid-content ep-bg-purple-dark">
-        <img src="/favicon.ico" alt=""/>
-      </div>
-      <div class="grid-content ep-bg-purple-dark">
+<script setup lang="ts">
+import {ref} from 'vue'
 
-      </div>
-    </el-col>
-  </el-row>
+const btns = ref(
+  ['a', 'b', 'c']
+)
+</script>
+
+<template>
+
 </template>
 
+<style scoped>
+
+</style>
