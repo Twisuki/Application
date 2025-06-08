@@ -14,6 +14,8 @@ declare module 'vue' {
     ArticleIndex: typeof import('./src/components/article/ArticleIndex.vue')['default']
     ArticleText: typeof import('./src/components/article/ArticleText.vue')['default']
     Category: typeof import('./src/components/ui/Category.vue')['default']
+    ElCol: typeof import('element-plus/es')['ElCol']
+    ElRow: typeof import('element-plus/es')['ElRow']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
