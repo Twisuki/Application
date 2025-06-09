@@ -21,7 +21,7 @@ const pages = ref(
     </div>
     <div id="nav-center">
       <div class="nav-center-item" v-for="page in pages" :id="page.page">
-        <a :href="page.url">{{page.page}}</a>
+        <a :href="page.url">{{ page.page }}</a>
       </div>
     </div>
     <div id="nav-end">
@@ -84,12 +84,32 @@ const pages = ref(
 
 .nav-center-item a:link, .nav-center-item a:visited {
   color: #000000;
+  position: relative;
   text-decoration: none;
 }
 
 .nav-center-item a:hover {
   color: #000000;
+  background-color: transparent;
 }
+
+.nav-center-item a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #0cc739;
+  transition: width 0.2s ease;
+  transform: translateX(-50%);
+}
+
+.nav-center-item a:hover::after {
+  width: 100%;
+}
+
 
 #nav-end {
   display: flex;
