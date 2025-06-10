@@ -43,6 +43,16 @@ const router = createRouter({
         showSidebar: true,
       },
     },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/About.vue'),
+      meta: {
+        title: '关于',
+        showInNavbar: true,
+        showSidebar: false,
+      },
+    },
   ],
 })
 
