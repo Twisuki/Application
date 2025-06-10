@@ -6,7 +6,7 @@ const pages = ref(
     {'page': '首页', 'url': '/'},
     {'page': '新闻', 'url': '/news'},
     {'page': '通知', 'url': '/notice'},
-    {'page': '指南', 'url': 'docs'},
+    {'page': '指南', 'url': '/docs'},
   ]
 )
 </script>
