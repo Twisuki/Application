@@ -1,16 +1,15 @@
-<script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import NavBar from '@/components/layout/NavBar.vue'
 import SideBar from '@/components/layout/SideBar.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 
-export default {
-  components: {NavBar, SideBar, AppFooter},
-  computed: {
-    showSidebar () {
-      return this.$route.meta?.showSidebar
-    }
-  }
-}
+const route = useRoute()
+
+const showSidebar = computed(() => {
+  return route.meta?.showSidebar
+})
 </script>
 
 <template>
