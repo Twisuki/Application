@@ -1,6 +1,14 @@
 :root {
   --navbar-height: 4rem;
+  --navbar-bgc: #ffffff;
 
   --a-color: hsla(160, 100%, 37%, 1);
   --a-underline-color: #0cc739;
+
+  --btn-bgc: #1eb88e;
+  --btn-hover-bgc: #26c49a;
+
+  --color-f: #ffffff;
+  --color-a: #aaaaaa;
+  --color-2: #222222;
 }

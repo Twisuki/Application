@@ -50,6 +50,7 @@ const pages = computed(() => {
   height: var(--navbar-height);
   position: fixed;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  background-color: var(--navbar-bgc);
   left: 0;
   right: 0;
   top: 0;
