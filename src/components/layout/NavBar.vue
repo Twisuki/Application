@@ -9,6 +9,7 @@ const pages = computed(() => {
     .filter(route => !! route.meta?.showInNavbar)
     .map(route => ({
       page: route.meta?.title,
+      name: route.name,
       url: route.path
     }))
 })
@@ -23,7 +24,7 @@ const pages = computed(() => {
       <span>机器人学院<br/>学生手册</span>
     </div>
     <div id="nav-center">
-      <div class="nav-center-item" v-for="page in pages" :id="page.page">
+      <div class="nav-center-item" v-for="page in pages">
         <a :href="page.url" class="underline">{{ page.page }}</a>
       </div>
     </div>

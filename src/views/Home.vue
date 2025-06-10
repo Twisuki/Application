@@ -1,14 +1,32 @@
-<script>
+<script setup lang="ts">
+import { ref } from "vue";
+
+interface Site {
+  name: string;
+  path: string;
+}
+
+const sites = ref<Site[]>(
+  [
+    { "name": "学院新闻", "path": "/news" },
+    { "name": "学院通知", "path": "/news" },
+    { "name": "学生组织", "path": "/news" },
+    { "name": "学校通知", "path": "/news" },
+    { "name": "学生会通知", "path": "/news" },
+    { "name": "新手手册", "path": "/news" },
+  ]
+);
 
 </script>
 
 <template>
   <div id="home">
-    <div id="hero">
-      <div id="hero-left">
+    <div id="home-hero">
+      <div id="home-hero-left">
         <div id="home-hero-title-1">机器人学院 <span class="HYTMR">学生手册</span></div>
         <div id="home-hero-title-2">一站式的学生信息获取站点</div>
-        <div id="home-hero-title-3">Powered by <a href="/about" class="underline HYTMR">桃子湖工作站</a></div>
+        <div id="home-hero-title-3">Powered by <a href="/about"
+                                                  class="underline HYTMR">桃子湖工作站</a></div>
         <div id="home-hero-btn">
           <div id="home-hero-btn-docs" class="home-hero-btn">
             <a href="/docs">文档</a>
@@ -18,14 +36,18 @@
           </div>
         </div>
       </div>
-      <div id="hero-right">
+      <div id="home-hero-right">
         <img src="/logo.png" alt="">
       </div>
     </div>
-    <div id="site">
-
+    <div id="home-site">
+      <div id="home-site-containor">
+        <div class="home-site-item" v-for="site in sites">
+          <a :href="site.path">{{ site.name }}</a>
+        </div>
+      </div>
     </div>
-    <div id="news">
+    <div id="home-news">
 
     </div>
   </div>
@@ -35,9 +57,11 @@
 #home {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#hero {
+#home-hero {
   width: 100%;
   padding: 0 2rem 0 2rem;
   display: flex;
@@ -107,13 +131,54 @@
   background-color: var(--btn-bgc);
 }
 
-#hero-right {
+#home-hero-right {
   display: flex;
   align-items: center;
 }
 
-#hero-right img {
+#home-hero-right img {
   width: 8rem;
   height: 8rem;
+}
+
+#home-site {
+  width: 100%;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+#home-site-containor {
+  width: calc(100% - 2rem);
+  min-height: 3rem;
+  border-radius: 1.5rem;
+  padding: 0 1.5rem;
+  border: 1px solid var(--text-gray);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.home-site-item {
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  text-align: center;
+  line-height: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--text-gray);
+}
+
+.home-site-item a {
+  color: var(--text-dark);
+}
+
+.home-site-item:hover {
+  background-color: var(--btn-hover-bgc);
+}
+
+.home-site-item:hover a {
+  color: var(--text-light);
 }
 </style>
