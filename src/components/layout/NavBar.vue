@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 
-const pages = ref(
-  [
-    {'page': '首页', 'url': '/'},
-    {'page': '新闻', 'url': '/news'},
-    {'page': '通知', 'url': '/notice'},
-    {'page': '指南', 'url': '/docs'},
-  ]
-)
+const router = useRouter()
+
+const pages = computed(() => {
+  return router.options.routes
+    .filter(route => !! route.meta?.showInNavbar)
+    .map(route => ({
+      page: route.meta?.title,
+      url: route.path
+    }))
+})
 </script>
 
 <template>

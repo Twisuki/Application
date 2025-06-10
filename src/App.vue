@@ -4,10 +4,10 @@ import SideBar from '@/components/layout/SideBar.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
 
 export default {
-  components: { NavBar, SideBar, AppFooter },
+  components: {NavBar, SideBar, AppFooter},
   computed: {
-    showSidebar() {
-      return this.$route.path !== '/'
+    showSidebar () {
+      return this.$route.meta?.showSidebar
     }
   }
 }
