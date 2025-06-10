@@ -88,7 +88,7 @@ const pages = computed(() => {
 }
 
 .nav-center-item a:link, .nav-center-item a:visited {
-  color: #000000;
+  color: var(--text-dark);
 }
 
 #nav-end {
@@ -106,7 +106,7 @@ const pages = computed(() => {
   height: 2rem;
   width: 10rem;
   border-radius: 1rem;
-  background-color: #aaaaaa;
+  background-color: var(--text-gray);
 }
 
 #nav-end-search svg {
@@ -117,7 +117,7 @@ const pages = computed(() => {
 #nav-end-search-input {
   width: 8rem;
   height: 2rem;
-  color: #222222;
+  color: var(--text-dark);
   position: absolute;
   border: none;
   background-color: transparent

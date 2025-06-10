@@ -47,13 +47,13 @@
 #home-hero-title-1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #52b394;
+  color: var(--primary);
 }
 
 #home-hero-title-1 span {
   font-size: 3rem;
   font-weight: 700;
-  color: #1eb88e;
+  color: var(--primary-light);
 }
 
 #home-hero-title-2 {
@@ -96,11 +96,11 @@
 }
 
 #home-hero-btn-about {
-  border: 1px solid #aaaaaa;
+  border: 1px solid var(--text-gray);
 }
 
 #home-hero-btn-about a {
-  color: #222222;
+  color: var(--text-dark);
 }
 
 #home-hero-btn-about:hover {

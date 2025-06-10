@@ -8,7 +8,10 @@
   --btn-bgc: #1eb88e;
   --btn-hover-bgc: #26c49a;
 
-  --color-f: #ffffff;
-  --color-a: #aaaaaa;
-  --color-2: #222222;
+  --text-dark: #222222;
+  --text-gray: #aaaaaa;
+  --text-light: #ffffff;
+
+  --primary: #52b394;
+  --primary-light: #5bd2aa;
 }
