@@ -14,8 +14,13 @@ const sites = ref<Site[]>(
     { "name": "学校通知", "path": "/news" },
     { "name": "学生会通知", "path": "/news" },
     { "name": "新手手册", "path": "/news" },
+    { "name": "这里要塞一堆tag", "path": "/news" },
   ]
-);
+)
+
+for (let i = 0; i < 15; i ++) {
+  sites.value.  push({"name" : `测试Tag${i}`, "path": "/news"});
+}
 
 </script>
 
@@ -151,14 +156,14 @@ const sites = ref<Site[]>(
 
 #home-site-containor {
   width: calc(100% - 2rem);
-  min-height: 3rem;
   border-radius: 1.5rem;
-  padding: 0 1.5rem;
+  padding: 0.75rem 1.5rem;
   border: 1px solid var(--text-gray);
   display: flex;
   justify-content: left;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem 1.5rem;
 }
 
 .home-site-item {
