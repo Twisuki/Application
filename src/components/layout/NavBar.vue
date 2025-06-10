@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
+const thisRoute = useRoute()
 
 const pages = computed(() => {
   return router.options.routes
-    .filter(route => !! route.meta?.showInNavbar)
+    .filter(route => !!route.meta?.showInNavbar)
     .map(route => ({
       page: route.meta?.title,
       name: route.name,
-      url: route.path
+      url: route.path,
+      active: route.name === thisRoute.name,
     }))
 })
 </script>
@@ -25,7 +27,7 @@ const pages = computed(() => {
     </div>
     <div id="nav-center">
       <div class="nav-center-item" v-for="page in pages">
-        <a :href="page.url" class="underline">{{ page.page }}</a>
+        <a :href="page.url" class="underline" :class="{'active': page.active}">{{ page.page }}</a>
       </div>
     </div>
     <div id="nav-end">
@@ -90,6 +92,14 @@ const pages = computed(() => {
 
 .nav-center-item a:link, .nav-center-item a:visited {
   color: var(--text-dark);
+}
+
+.nav-center-item a.active {
+  position: relative;
+}
+
+a.active::after {
+  width: 100%;
 }
 
 #nav-end {
