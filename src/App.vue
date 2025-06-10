@@ -34,6 +34,6 @@ export default {
 }
 
 .main-content {
-  margin-top: calc(var(--navbar-height) + 1rem);
+  margin-top: calc(var(--navbar-height) + 0.5rem);
 }
 </style>
