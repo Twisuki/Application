@@ -47,7 +47,7 @@ const pages = computed(() => {
 <style scoped>
 #navbar {
   width: 100vw;
-  height: 4rem;
+  height: var(--navbar-height);
   position: fixed;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   left: 0;

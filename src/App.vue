@@ -19,7 +19,7 @@ export default {
 
     <div class="main-content">
       <SideBar v-if="showSidebar"/>
-      <router-view class="page-content"/>
+      <router-view/>
     </div>
 
     <AppFooter class="app-footer"/>
@@ -31,5 +31,9 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.main-content {
+  margin-top: var(--navbar-height);
 }
 </style>
