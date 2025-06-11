@@ -16,10 +16,10 @@ const pages = computed(() => {
     }))
 })
 
-const isNavToggleActive = ref(false)
+const isNavActive = ref(true)
 
 function toggleNavActive() {
-  isNavToggleActive.value = !isNavToggleActive.value
+  isNavActive.value = !isNavActive.value
 }
 </script>
 
@@ -31,14 +31,14 @@ function toggleNavActive() {
       </a>
       <span>机器人学院<br/>学生手册</span>
     </div>
-    <div id="nav-center">
+    <div id="nav-center" :class="{ active: isNavActive }">
       <div class="nav-center-item" v-for="page in pages">
         <a :href="page.url" class="underline" :class="{'active': page.active}">{{ page.page }}</a>
       </div>
     </div>
     <div id="nav-end">
       <div class="nav-end-item" id="nav-end-toggle" @click="toggleNavActive"
-           :class="{ active: isNavToggleActive }">
+           :class="{ active: isNavActive }">
         <span id="nav-end-toggle-1"></span>
         <span id="nav-end-toggle-2"></span>
         <span id="nav-end-toggle-3"></span>
@@ -216,6 +216,33 @@ a.active::after {
     width: 1.5rem;
     top: calc(1rem - 2px);
     rotate: 45deg;
+  }
+
+  /* 展开内容 */
+  #nav-center.active {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100vw;
+    padding: 2rem 0;
+    background-color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-center-item {
+    width: 80vw;
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: 2px solid var(--text-gray);
+  }
+
+  .nav-center-item a.active {
+    color: var(--a-underline-color);
+  }
+
+  .nav-center-item a::after {
+    display: none;
   }
 }
 </style>
