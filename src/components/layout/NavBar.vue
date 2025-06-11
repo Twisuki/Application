@@ -169,7 +169,12 @@ a.active::after {
   padding: 1px;
   border-radius: calc(0.5rem + 1px);
   background-color: var(--text-light);
+  transition: transform 0.2s ease;
   display: block;
+}
+
+#nav-end-theme:hover {
+  border: 1px solid var(--text-dark-gray);
 }
 
 #nav-end-theme-day {
