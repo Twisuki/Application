@@ -1,8 +1,12 @@
 :root {
   --navbar-height: 4rem;
+
+  --text: #000000;
+  --bgc: #ffffff;
+
   --navbar-bgc: #ffffff;
 
-  --a-color: hsla(160, 100%, 37%, 1);
+  --a-color: #00bd7e;
   --a-underline-color: #0cc739;
 
   --btn-bgc: #1eb88e;

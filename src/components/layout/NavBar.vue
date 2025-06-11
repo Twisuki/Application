@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useThemeStore } from "@/stores/theme.ts";
 
 const router = useRouter()
 const thisRoute = useRoute()
@@ -24,11 +25,7 @@ function toggleNavActive() {
 }
 
 // 昼夜切换
-const isDarkMode = ref(false)
-
-function toggleDarkMode() {
-  isDarkMode.value = !isDarkMode.value
-}
+const theme = useThemeStore()
 </script>
 
 <template>
@@ -51,8 +48,8 @@ function toggleDarkMode() {
         <span id="nav-end-toggle-2"></span>
         <span id="nav-end-toggle-3"></span>
       </div>
-      <div class="nav-end-item" id="nav-end-theme" @click="toggleDarkMode"
-           :class="{ dark: isDarkMode}">
+      <div class="nav-end-item" id="nav-end-theme" @click="theme.toggleTheme"
+           :class="{ dark: theme.mode === 'dark'}">
         <svg id="nav-end-theme-day" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24">
           <path fill="currentColor"
