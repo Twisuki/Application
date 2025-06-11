@@ -74,6 +74,7 @@ const pages = computed(() => {
   width: 2rem;
   height: 2rem;
   margin-left: 1rem;
+  display: block;
 }
 
 #nav-start span {
