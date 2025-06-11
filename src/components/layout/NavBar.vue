@@ -16,7 +16,7 @@ const pages = computed(() => {
     }))
 })
 
-const isNavActive = ref(true)
+const isNavActive = ref(false)
 
 function toggleNavActive() {
   isNavActive.value = !isNavActive.value
@@ -74,6 +74,7 @@ function toggleNavActive() {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 #nav-start {
