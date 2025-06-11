@@ -1,3 +1,12 @@
+*:not(:is(a, button, input, .btn, .hover-effect, [class*="hover"], [class*="btn"])) {
+  color: var(--text);
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+body {
+  background-color: var(--bgc);
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;

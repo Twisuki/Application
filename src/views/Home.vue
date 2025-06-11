@@ -18,7 +18,7 @@ const sites = ref<Site[]>(
   ]
 )
 
-for (let i = 0; i < 15; i ++) {
+for (let i = 0; i < 100; i ++) {
   sites.value.  push({"name" : `测试Tag${i}`, "path": "/news"});
 }
 
