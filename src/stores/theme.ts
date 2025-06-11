@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref, watchEffect } from "vue";
 
 export const useThemeStore = defineStore('theme', () => {
-  const mode = ref<'light' | 'dark'>('dark')
+  const mode = ref<'light' | 'dark'>('light')
 
   const colors = {
     light: {
