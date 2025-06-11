@@ -38,8 +38,8 @@ export const useThemeStore = defineStore('theme', () => {
       '--btn-hover-bgc': '#26c49a',
 
       '--text-dark': '#dddddd',
-      '--text-dark-gray': '#555555',
-      '--text-gray': '#333333',
+      '--text-dark-gray': '#777777',
+      '--text-gray': '#555555',
       '--text-light': '#000000',
 
       '--primary': '#52b394',

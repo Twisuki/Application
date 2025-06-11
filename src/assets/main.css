@@ -1,4 +1,4 @@
-* {
+*:not(:is(a, button, input, .btn, .hover-effect, [class*="hover"], [class*="btn"])) {
   color: var(--text);
   transition: color 0.5s ease, background-color 0.5s ease;
 }

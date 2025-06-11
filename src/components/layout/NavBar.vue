@@ -168,7 +168,7 @@ a.active::after {
   height: 1rem;
   padding: 1px;
   border-radius: calc(0.5rem + 1px);
-  background-color: #fff;
+  background-color: var(--text-light);
   display: block;
 }
 
