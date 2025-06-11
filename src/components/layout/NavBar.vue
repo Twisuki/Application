@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
@@ -15,6 +15,12 @@ const pages = computed(() => {
       active: route.name === thisRoute.name,
     }))
 })
+
+const isNavToggleActive = ref(false)
+
+function toggleNavActive() {
+  isNavToggleActive.value = !isNavToggleActive.value
+}
 </script>
 
 <template>
@@ -31,7 +37,8 @@ const pages = computed(() => {
       </div>
     </div>
     <div id="nav-end">
-      <div class="nav-end-item" id="nav-end-toggle">
+      <div class="nav-end-item" id="nav-end-toggle" @click="toggleNavActive"
+           :class="{ active: isNavToggleActive }">
         <span id="nav-end-toggle-1"></span>
         <span id="nav-end-toggle-2"></span>
         <span id="nav-end-toggle-3"></span>
@@ -194,18 +201,18 @@ a.active::after {
     transition: top 0.2s ease, rotate 0.2s ease;
   }
 
-  #nav-end-toggle.avtive #nav-end-toggle-1 {
+  #nav-end-toggle.active #nav-end-toggle-1 {
     width: 1.5rem;
     top: calc(1rem - 2px);
     rotate: -45deg;
   }
 
-  #nav-end-toggle.avtive #nav-end-toggle-2 {
+  #nav-end-toggle.active #nav-end-toggle-2 {
     right: -2rem;
     opacity: 0;
   }
 
-  #nav-end-toggle.avtive #nav-end-toggle-3 {
+  #nav-end-toggle.active #nav-end-toggle-3 {
     width: 1.5rem;
     top: calc(1rem - 2px);
     rotate: 45deg;
