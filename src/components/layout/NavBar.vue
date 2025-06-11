@@ -31,6 +31,11 @@ const pages = computed(() => {
       </div>
     </div>
     <div id="nav-end">
+      <div class="nav-end-item" id="nav-end-toggle">
+        <span id="nav-end-toggle-1"></span>
+        <span id="nav-end-toggle-2"></span>
+        <span id="nav-end-toggle-3"></span>
+      </div>
       <div class="nav-end-item" id="nav-end-search">
         <label for="nav-end-search-input">
           <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"
@@ -114,6 +119,12 @@ a.active::after {
   justify-items: center;
 }
 
+/* 展开按钮 */
+#nav-end-toggle {
+  display: none;
+}
+
+/* 搜索框 */
 #nav-end-search {
   height: 2rem;
   width: 10rem;
@@ -133,5 +144,71 @@ a.active::after {
   position: absolute;
   border: none;
   background-color: transparent
+}
+
+@media only screen and (max-width: 768px) {
+  #navbar {
+    padding: 0.5rem;
+  }
+
+  #nav-start span {
+    display: none;
+  }
+
+  #nav-center {
+    display: none;
+  }
+
+  /* 展开按钮 */
+  #nav-end-toggle {
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+  }
+
+  #nav-end-toggle span {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--text-gray);
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+
+  #nav-end-toggle-1 {
+    width: 1rem;
+    top: calc(0.5rem - 2px);
+    transition: top 0.2s ease, rotate 0.2s ease;
+  }
+
+  #nav-end-toggle-2 {
+    width: 1.5rem;
+    top: calc(1rem - 2px);
+    transition: right 0.2s ease, opacity 0.2s ease;
+  }
+
+  #nav-end-toggle-3 {
+    width: 0.75rem;
+    top: calc(1.5rem - 2px);
+    transition: top 0.2s ease, rotate 0.2s ease;
+  }
+
+  #nav-end-toggle.avtive #nav-end-toggle-1 {
+    width: 1.5rem;
+    top: calc(1rem - 2px);
+    rotate: -45deg;
+  }
+
+  #nav-end-toggle.avtive #nav-end-toggle-2 {
+    right: -2rem;
+    opacity: 0;
+  }
+
+  #nav-end-toggle.avtive #nav-end-toggle-3 {
+    width: 1.5rem;
+    top: calc(1rem - 2px);
+    rotate: 45deg;
+  }
 }
 </style>
