@@ -155,9 +155,9 @@ a.active::after {
 
 /* 昼夜切换 */
 #nav-end-theme {
-  width: 3.5rem;
-  height: 2rem;
-  padding: 0 0.25rem;
+  width: calc(2.5rem + 4px);
+  height: calc(1rem + 4px);
+  padding: 1px;
   background-color: var(--text-gray);
   border-radius: 1rem;
   display: flex;
@@ -169,8 +169,8 @@ a.active::after {
 #nav-end-theme svg {
   width: 1rem;
   height: 1rem;
-  padding: 0.25rem;
-  border-radius: 0.75rem;
+  padding: 1px;
+  border-radius: calc(0.5rem + 1px);
   background-color: #fff;
   display: block;
 }
@@ -182,13 +182,13 @@ a.active::after {
 }
 
 #nav-end-theme-night {
-  transform: translateX(-2rem) rotate(-90deg);
+  transform: translateX(calc(-1.5rem - 1px)) rotate(-90deg);
   z-index: 0;
   transition: transform 0.2s ease, z-index 0.2s ease;
 }
 
 #nav-end-theme.dark #nav-end-theme-day {
-  transform: translateX(2rem) rotate(90deg);
+  transform: translateX(calc(1.5rem + 1px)) rotate(90deg);
   z-index: 0;
 }
 
