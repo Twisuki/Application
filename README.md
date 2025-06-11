@@ -2,7 +2,7 @@
 
 一个一站式的学生信息获取据点, 由湖南大学机器人学院`桃子湖工作室`维护.
 
-本仓库中暂时使用`vuepress-theme-hope`构建, 代码部分使用`MIT协议`[@Mr.Hope](https://github.com/Mister-Hope)和`Apache 2.0协议`开源.
+本分支版本使用`vue`编写, 代码使用`Apache 2.0`开源.
 
 投稿文档均使用 CC BY-NC-SA 4.0 协议共享.
 
@@ -10,18 +10,7 @@
 
 ## 构建
 
-使用`pnpm`包管理器.
-
-推荐开发模式:
-
-```mermaid
-flowchart LR
-    A["node version manager(nvm)"]
-    B["node(推荐版本: node22)"]
-    C["node package manager(npm)"]
-    D["performant npm(pnpm)"]
-    A --> B --> C --> D
-```
+使用`pnpm`包管理器, `vue`构建器和`vite`打包器.
 
 ```bash
 $ pnpm install
