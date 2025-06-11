@@ -240,7 +240,7 @@ a.active::after {
   #nav-end-toggle span {
     height: 4px;
     border-radius: 2px;
-    background-color: var(--text-gray);
+    background-color: var(--text-dark-gray);
     display: block;
     position: absolute;
     right: 0;
