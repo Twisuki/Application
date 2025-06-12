@@ -18,15 +18,15 @@ const data: object = {
         {
           name: '二级菜单1',
           children: [
-            {name: '文章1'},
-            {name: '文章2'},
+            { name: '文章1' },
+            { name: '文章2' },
           ],
         },
         {
           name: '二级菜单2',
           children: [
-            {name: '文章1'},
-            {name: '文章2'},
+            { name: '文章1' },
+            { name: '文章2' },
           ],
         },
       ],
@@ -37,24 +37,24 @@ const data: object = {
         {
           name: '二级菜单1',
           children: [
-            {name: '文章1'},
-            {name: '文章2'},
-            {name: '文章3'},
-            {name: '文章4'},
+            { name: '文章1' },
+            { name: '文章2' },
+            { name: '文章3' },
+            { name: '文章4' },
           ],
         },
         {
           name: '二级菜单2',
           children: [
-            {name: '文章1'},
-            {name: '文章2'},
+            { name: '文章1' },
+            { name: '文章2' },
           ],
         },
         {
           name: '二级菜单3',
           children: [
-            {name: '文章1'},
-            {name: '文章2'},
+            { name: '文章1' },
+            { name: '文章2' },
           ],
         },
       ],
@@ -151,6 +151,48 @@ const data: object = {
   border-right: none;
   border-bottom: 4px solid var(--text-dark);
   border-left: 4px solid var(--text-dark);
+}
+
+#sidebar-title {
+  margin: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--text-dark);
+}
+
+#sidebar-container {
+  margin: 1rem;
+}
+
+.sidebar-item-1 {
+  border-radius: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.sidebar-item-1:hover {
+  background-color: color-mix(in srgb, var(--text-gray), transparent 50%);
+}
+
+.sidebar-item-1 span {
+  font-size: 1.3rem;
+}
+
+.sidebar-item-2 span {
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+
+.sidebar-item-3 span {
+  display: block;
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2px;
+  border-radius: 4px;
+}
+
+.sidebar-item-3 span:hover {
+  background-color: color-mix(in srgb, var(--text-gray), transparent 50%);
 }
 
 /* 超宽屏幕 */
