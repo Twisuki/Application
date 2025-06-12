@@ -18,8 +18,8 @@ const sites = ref<Site[]>(
   ]
 )
 
-for (let i = 0; i < 100; i ++) {
-  sites.value.  push({"name" : `测试Tag${i}`, "path": "/news"});
+for (let i = 0; i < 100; i++) {
+  sites.value.push({ "name": `测试Tag${ i }`, "path": "/news" });
 }
 
 </script>
@@ -74,24 +74,28 @@ for (let i = 0; i < 100; i ++) {
 }
 
 #home-hero-title-1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
+  margin: 2rem 0 1rem 0;
   color: var(--primary);
 }
 
 #home-hero-title-1 span {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--primary-light);
 }
 
 #home-hero-title-2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  margin: 1rem 0;
 }
 
 #home-hero-title-3 {
+  font-size: 1.5rem;
   font-weight: 400;
+  margin: 1rem 0 0 0;
 }
 
 #home-hero-title-3 a {
@@ -142,8 +146,8 @@ for (let i = 0; i < 100; i ++) {
 }
 
 #home-hero-right img {
-  width: 8rem;
-  height: 8rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 #home-site {
