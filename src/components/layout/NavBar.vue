@@ -92,7 +92,7 @@ const theme = useThemeStore()
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: var(--navbar-z-index);
 }
 
 #nav-start {
