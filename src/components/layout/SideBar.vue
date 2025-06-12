@@ -24,7 +24,7 @@
   z-index: var(--sidebar-z-index);
 }
 
-#sidebar::after {
+#sidebar::before {
   content: '';
   width: calc(100% - var(--sidebar-width));
   height: calc(100% - var(--navbar-height));
