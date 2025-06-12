@@ -1,25 +1,82 @@
 <script setup lang="ts">
-
-// 侧边栏打开/折叠
 import { ref } from "vue";
 
+// 侧边栏打开/折叠
 const isSidebar = ref(false)
 
 function sidebarToggle() {
   isSidebar.value = !isSidebar.value;
+}
+
+// 渲染sidebar
+const data: object = {
+  name: '菜单',
+  children: [
+    {
+      name: '一级菜单1',
+      children: [
+        {
+          name: '二级菜单1',
+          children: [
+            {name: '文章1'},
+            {name: '文章2'},
+          ],
+        },
+        {
+          name: '二级菜单2',
+          children: [
+            {name: '文章1'},
+            {name: '文章2'},
+          ],
+        },
+      ],
+    },
+    {
+      name: '一级菜单2',
+      children: [
+        {
+          name: '二级菜单1',
+          children: [
+            {name: '文章1'},
+            {name: '文章2'},
+            {name: '文章3'},
+            {name: '文章4'},
+          ],
+        },
+        {
+          name: '二级菜单2',
+          children: [
+            {name: '文章1'},
+            {name: '文章2'},
+          ],
+        },
+        {
+          name: '二级菜单3',
+          children: [
+            {name: '文章1'},
+            {name: '文章2'},
+          ],
+        },
+      ],
+    },
+  ],
 }
 </script>
 
 <template>
   <div id="sidebar" :class="{'active': isSidebar}">
     <div id="sidebar-title">
-
+      {{ data.name }}
     </div>
     <div id="sidebar-container">
-      <div class="sidebar-item-1">
-        <div class="sidebar-item-2">
-          <div class="sidebar-item-3">
-
+      <div class="sidebar-item-1" v-for="item1 in data.children">
+        <span>{{ item1.name }}</span>
+        <div class="sidebar-item-2" v-for="item2 in item1.children">
+          <span>{{ item2.name }}</span>
+          <div class="sidebar-item-3" v-for="item3 in item2.children">
+            <span>
+              <a href="#">{{ item3.name }}</a>
+            </span>
           </div>
         </div>
       </div>
