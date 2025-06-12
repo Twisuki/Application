@@ -10,6 +10,7 @@ export const useThemeStore = defineStore('theme', () => {
       '--bgc': '#ffffff',
 
       '--navbar-bgc': '#ffffff',
+      '--sidebar-bgc': '#ffffff',
 
       '--a-color': '#00bd7e',
       '--a-underline-color': '#0cc739',
@@ -30,6 +31,7 @@ export const useThemeStore = defineStore('theme', () => {
       '--bgc': '#1a1a1a',
 
       '--navbar-bgc': '#1a1a1a',
+      '--sidebar-bgc': '#1a1a1a',
 
       '--a-color': '#00bd7e',
       '--a-underline-color': '#0cc739',

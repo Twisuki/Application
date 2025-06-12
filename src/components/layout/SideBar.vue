@@ -1,9 +1,36 @@
-<template>
-  <div class="sidebar">
-    <!-- 搜索框 - 青色 -->
-    <div class="search" style="background: #20c997; height: 50px; margin-bottom: 10px;"></div>
+<script setup lang="ts">
 
-    <!-- 分类列表 - 深绿 -->
-    <div class="categories" style="background: #2b8a3e; height: 300px;"></div>
+</script>
+
+<template>
+  <div id="sidebar">
+    <div id="sidebar-container">
+
+    </div>
+    <div id="sidebar-toggle">
+
+    </div>
   </div>
 </template>
+
+<style scoped>
+#sidebar {
+  width: var(--sidebar-width);
+  height: calc(100% - var(--navbar-height));
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  background-color: var(--sidebar-bgc);
+  z-index: var(--sidebar-z-index);
+}
+
+#sidebar::after {
+  content: '';
+  width: calc(100% - var(--sidebar-width));
+  height: calc(100% - var(--navbar-height));
+  position: fixed;
+  top: var(--navbar-height);
+  right: 0;
+  background-color: var(--sidebar-backdrop-bgc);
+}
+</style>
