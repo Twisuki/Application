@@ -3,7 +3,7 @@
 // 侧边栏打开/折叠
 import { ref } from "vue";
 
-const isSidebar = ref(true)
+const isSidebar = ref(false)
 
 function sidebarToggle() {
   isSidebar.value = !isSidebar.value;
@@ -24,10 +24,9 @@ function sidebarToggle() {
         </div>
       </div>
     </div>
-
-  </div>
-  <div id="sidebar-toggle" @click="sidebarToggle" :class="{'active': isSidebar}">
-    <span></span>
+    <div id="sidebar-toggle" @click="sidebarToggle" :class="{'active': isSidebar}">
+      <span></span>
+    </div>
   </div>
 </template>
 
@@ -37,17 +36,17 @@ function sidebarToggle() {
   height: calc(100% - var(--navbar-height));
   position: fixed;
   top: var(--navbar-height);
-  left: 0;
+  left: calc(-1 * var(--sidebar-width));
   background-color: var(--sidebar-bgc);
   z-index: var(--sidebar-z-index);
-  display: none;
+  transition: left 0.2s ease;
 }
 
 #sidebar.active {
-  display: block;
+  left: 0;
 }
 
-#sidebar::before {
+#sidebar.active::before {
   content: '';
   width: calc(100% - var(--sidebar-width));
   height: calc(100% - var(--navbar-height));
@@ -60,14 +59,14 @@ function sidebarToggle() {
 
 #sidebar-toggle {
   width: 2rem;
-  height: calc(100% - var(--navbar-height));
+  height: 100%;
   position: fixed;
-  top: var(--navbar-height);
+  top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: var(--sidebar-z-index);
+  transition: left 0.2s ease;
 }
 
 #sidebar-toggle.active {
