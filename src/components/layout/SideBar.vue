@@ -155,7 +155,7 @@ const data: object = {
 
 #sidebar-title {
   margin: 0.5rem 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
   border-bottom: 2px solid var(--text-dark);
 }
@@ -164,21 +164,21 @@ const data: object = {
   margin: 1rem;
 }
 
-.sidebar-item-1 {
+.sidebar-item-2 {
   border-radius: 0.5rem;
-  padding-left: 0.25rem;
+  padding: 0.25rem;
 }
 
-.sidebar-item-1:hover {
+.sidebar-item-2:hover {
   background-color: color-mix(in srgb, var(--text-gray), transparent 50%);
 }
 
 .sidebar-item-1 span {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .sidebar-item-2 span {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-left: 0.5rem;
 }
 
