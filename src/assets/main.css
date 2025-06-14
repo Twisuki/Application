@@ -11,13 +11,6 @@ body {
   background-color: var(--bgc);
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  font-weight: normal;
-}
-
 /* 取消a默认样式 */
 a:link, a:visited {
   color: var(--a-color);

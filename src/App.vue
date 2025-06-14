@@ -33,6 +33,11 @@ const showSidebar = computed(() => {
 }
 
 .main-content {
+  max-width: 1280px;
   margin-top: calc(var(--navbar-height) + 0.5rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+  font-weight: normal;
 }
 </style>
