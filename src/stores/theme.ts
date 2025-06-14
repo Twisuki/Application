@@ -11,6 +11,8 @@ export const useThemeStore = defineStore('theme', () => {
 
       '--navbar-bgc': '#ffffff',
       '--sidebar-bgc': '#ffffff',
+      '--sidebar-backdrop-bgc': '#55555555',
+      '--footer-bgc': '#eeeeee',
 
       '--a-color': '#00bd7e',
       '--a-underline-color': '#0cc739',
@@ -32,6 +34,8 @@ export const useThemeStore = defineStore('theme', () => {
 
       '--navbar-bgc': '#1a1a1a',
       '--sidebar-bgc': '#1a1a1a',
+      '--sidebar-backdrop-bgc': '#22222288',
+      '--footer-bgc': '#0b0b0b',
 
       '--a-color': '#00bd7e',
       '--a-underline-color': '#0cc739',
