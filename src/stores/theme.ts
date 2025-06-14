@@ -2,7 +2,11 @@ import { defineStore } from "pinia";
 import { ref, watchEffect } from "vue";
 
 export const useThemeStore = defineStore('theme', () => {
-  const mode = ref<'light' | 'dark'>('light')
+  const mode = ref<'light' | 'dark'>(
+    typeof localStorage !== 'undefined'
+      ? (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
+      : 'light'
+  );
 
   const colors = {
     light: {
@@ -52,30 +56,31 @@ export const useThemeStore = defineStore('theme', () => {
       '--primary-light': '#5bd2aa',
     }
   }
-
-  // 切换主题
-  const toggleTheme = () => {
-    mode.value = mode.value === 'light' ? 'dark' : 'light'
-  }
-
-  // 监听主题变化并应用到根元素
-  watchEffect(() => {
-    const root = document.documentElement
-    const themeColors = colors[mode.value]
+// 应用主题的函数（提取为独立函数）
+  const applyTheme = () => {
+    const root = document.documentElement;
+    const themeColors = colors[mode.value];
 
     Object.entries(themeColors).forEach(([key, value]) => {
-      root.style.setProperty(key, value)
-    })
+      root.style.setProperty(key, value);
+    });
 
-    // 可选：保存到 localStorage
-    localStorage.setItem('theme', mode.value)
-  })
+    localStorage.setItem('theme', mode.value);
+  };
 
-  // 初始化时检查 localStorage
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'light' || savedTheme === 'dark') {
-    mode.value = savedTheme
+  // 初始化时立即应用（解决刷新问题）
+  if (typeof document !== 'undefined') {
+    applyTheme();
   }
 
-  return { mode, toggleTheme }
+  // 监听主题变化
+  watchEffect(() => {
+    applyTheme();
+  });
+
+  const toggleTheme = () => {
+    mode.value = mode.value === 'light' ? 'dark' : 'light';
+  };
+
+  return { mode, toggleTheme };
 })
