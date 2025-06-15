@@ -18,7 +18,7 @@ const sites = ref<Site[]>(
   ]
 )
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 1; i++) {
   sites.value.push({ "name": `测试Tag${ i }`, "path": "/news" });
 }
 
@@ -45,6 +45,7 @@ for (let i = 0; i < 100; i++) {
         <img src="/logo.png" alt="">
       </div>
     </div>
+
     <div id="home-site">
       <div id="home-site-containor">
         <div class="home-site-item" v-for="site in sites">
@@ -52,6 +53,7 @@ for (let i = 0; i < 100; i++) {
         </div>
       </div>
     </div>
+
     <div id="home-news">
 
     </div>
