@@ -18,7 +18,7 @@ const sites = ref<Site[]>(
   ]
 )
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 1; i++) {
   sites.value.push({ "name": `测试Tag${ i }`, "path": "/news" });
 }
 
@@ -45,6 +45,7 @@ for (let i = 0; i < 100; i++) {
         <img src="/logo.png" alt="">
       </div>
     </div>
+
     <div id="home-site">
       <div id="home-site-containor">
         <div class="home-site-item" v-for="site in sites">
@@ -52,6 +53,7 @@ for (let i = 0; i < 100; i++) {
         </div>
       </div>
     </div>
+
     <div id="home-news">
 
     </div>
@@ -189,5 +191,53 @@ for (let i = 0; i < 100; i++) {
 
 .home-site-item:hover a {
   color: var(--text-light);
+}
+
+/* 小型设备标题适配 */
+@media only screen and (max-width: 768px) {
+  #home-hero {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #home-hero-title-1 {
+    font-size: 2rem;
+  }
+
+  #home-hero-title-1 span {
+    font-size: 2.5rem;
+  }
+
+  #home-hero-title-2 {
+    font-size: 1.5rem;
+  }
+
+  #home-hero-title-3 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 394px) {
+  #home-hero-left {
+    text-align: center;
+  }
+
+  #home-hero-title-1 {
+    font-size: 1.5rem;
+  }
+
+  #home-hero-btn {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 352px) {
+  #home-hero-title-1 {
+    font-size: 1rem;
+  }
+
+  #home-hero-title-2 {
+    font-size: 1rem;
+  }
 }
 </style>
