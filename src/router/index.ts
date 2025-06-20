@@ -14,21 +14,21 @@ const router = createRouter({
       },
     },
     {
-      path: '/news',
-      name: 'news',
-      component: () => import('../views/News.vue'),
+      path: '/graduate',
+      name: 'graduate',
+      component: () => import('../views/Graduate.vue'),
       meta: {
-        title: '新闻',
+        title: '毕业',
         showInNavbar: true,
         showSidebar: true,
       },
     },
     {
-      path: '/notice',
-      name: 'notice',
-      component: () => import('../views/Notice.vue'),
+      path: '/study',
+      name: 'study',
+      component: () => import('../views/Study.vue'),
       meta: {
-        title: '通知',
+        title: '学业',
         showInNavbar: true,
         showSidebar: true,
       },
@@ -39,6 +39,16 @@ const router = createRouter({
       component: () => import('../views/Docs.vue'),
       meta: {
         title: '指南',
+        showInNavbar: true,
+        showSidebar: true,
+      },
+    },
+    {
+      path: '/life',
+      name: 'life',
+      component: () => import('../views/Life.vue'),
+      meta: {
+        title: '生活',
         showInNavbar: true,
         showSidebar: true,
       },
