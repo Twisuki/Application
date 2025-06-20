@@ -204,11 +204,16 @@ const data: object = {
     top: var(--navbar-height);
     left: calc((100% - 1280px) / 2 - var(--sidebar-width) - 2rem);
     background-color: var(--sidebar-bgc);
-    box-shadow: 0 -0.5rem 0.25rem 0.5rem #00000080;
+    box-shadow: none;
+    border-right: 1px solid var(--text-dark-gray);
     z-index: var(--sidebar-z-index);
   }
 
   #sidebar::before {
+    display: none;
+  }
+
+  #sidebar-toggle {
     display: none;
   }
 }
